@@ -1,0 +1,160 @@
+/* --- Global Structural Variables --- */
+:root {
+    --bg-surface: #f8fafc;
+    --panel-white: #ffffff;
+    --primary-brand: #4f46e5;     /* Deep Indigo */
+    --primary-hover: #4338ca;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-default: #cbd5e1;
+    --color-error: #ef4444;       /* Alert Red */
+    --color-success: #10b981;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- Container Card Panel Layout --- */
+.form-container {
+    background-color: var(--panel-white);
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.form-header {
+    margin-bottom: 28px;
+}
+
+.form-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.form-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* --- Core Form Inputs Formatting --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 16px;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px 14px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-default);
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    background-color: #fff;
+}
+
+/* Focused input state design */
+input:focus, select:focus {
+    border-color: var(--primary-brand);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Inline Checkbox Structural Modifiers */
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.checkbox-group input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* --- CSS Validation Feedback Layouts --- */
+.error-msg {
+    color: var(--color-error);
+    font-size: 0.78rem;
+    font-weight: 500;
+    display: none; /* Hidden unless validation class trips toggle */
+    margin-top: 2px;
+}
+
+.block-error {
+    margin-bottom: 18px;
+    display: none;
+}
+
+/* Stateful feedback rules applied dynamically by JavaScript logic */
+.form-group.invalid-state input,
+.form-group.invalid-state select {
+    border-color: var(--color-error);
+    background-color: #fef2f2;
+}
+
+.form-group.invalid-state .error-msg {
+    display: block;
+}
+
+/* --- Action Button Styling --- */
+.submit-btn {
+    width: 100%;
+    background-color: var(--primary-brand);
+    color: white;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover);
+}

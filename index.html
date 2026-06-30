@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="form-container">
+        <header class="form-header">
+            <h2>Create an Account</h2>
+            <p>Join our platform by filling out the secure registration profile below.</p>
+        </header>
+
+        <form id="registration-form" novalidate>
+            
+            <div class="form-group">
+                <label for="username">Full Name</label>
+                <input type="text" id="username" name="username" required minlength="3" placeholder="John Doe">
+                <span class="error-msg" id="name-error">Name must be at least 3 characters long.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+                <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="8" placeholder="••••••••">
+                <span class="error-msg" id="password-error">Password must be at least 8 characters.</span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="18" max="120" required placeholder="18">
+                    <span class="error-msg" id="age-error">Must be 18 or older.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="start-date">Preferred Start Date</label>
+                    <input type="date" id="start-date" name="start-date" required>
+                    <span class="error-msg" id="date-error">Please select a valid date.</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="role">Primary Track</label>
+                <select id="role" name="role" required>
+                    <option value="" disabled selected>Select an option...</option>
+                    <option value="frontend">Frontend Engineering</option>
+                    <option value="backend">Backend Engineering</option>
+                    <option value="devops">DevOps & Cloud</option>
+                </select>
+                <span class="error-msg" id="role-error">Please select your primary track.</span>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the Terms of Service and Privacy Policy</label>
+            </div>
+            <span class="error-msg block-error" id="terms-error">You must accept the terms to continue.</span>
+
+            <button type="submit" class="submit-btn">Complete Registration ✨</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
